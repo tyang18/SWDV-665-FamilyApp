@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="home-header"><h1 class="item-title">{{title}}</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  
+  <div>
+    <!-- Responsive Layout with Ion Grid-->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 col-md-4 col-xl-3 *ngFor="let image of images">
+          <div class="image-container" [style.background-image]="'url(assets/imgs/' + image + '.png)'"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  </div>
+
+  
+</ion-content>

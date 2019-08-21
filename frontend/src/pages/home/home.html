@@ -1,0 +1,42 @@
+<ion-header >
+    <ion-navbar >
+        <ion-title class="home-header">
+            <h1 class="item-title">
+                {{title}}
+            </h1>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h3 class="no-item" text-center *ngIf="items.length === 0">
+        No item available on the list!
+    </h3>
+   
+    <ion-card  *ngFor="let item of items; let i = index;">
+        <ion-item >
+            <ion-thumbnail  (click)="openPage(item.link)" item-start>
+                <img src="{{item.image}}">
+            </ion-thumbnail>
+            <ion-card-header>
+                <h1>{{item.name}}</h1>
+                <p>{{item.dob}}</p>
+            </ion-card-header>
+            <button (click)="editItem(item, i)" ion-button small item-end>
+                Edit
+            </button>
+            <button (click)="removeItem(item, i)" ion-button small item-end>
+                Delete
+            </button>
+        </ion-item>
+    </ion-card>
+ 
+
+    <button ion-button (click)="addItem()" icon-start>
+        <ion-icon name="add"></ion-icon>
+        Add Member
+    </button>
+
+
+</ion-content>
